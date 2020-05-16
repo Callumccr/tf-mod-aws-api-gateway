@@ -5,7 +5,7 @@
 #
 
 # Name of this project
-name: tf-mod-aws-api-gate
+name: tf-mod-aws-api-gateway
 
 # Canonical Git repo
 github_repo: https://github.com/Callumccr/tf-mod-aws-api-gateway
