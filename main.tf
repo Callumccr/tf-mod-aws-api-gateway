@@ -18,10 +18,10 @@ resource "aws_lb" "default" {
   }
 }
 
-resource "aws_api_gateway_vpc_link" "example" {
+resource "aws_api_gateway_vpc_link" "default" {
   name        = "${module.label.id}-vpc-link"
   description = var.description
-  target_arns = ["${aws_lb.example.arn}"]
+  target_arns = ["${aws_lb.default.arn}"]
 }
 
 
