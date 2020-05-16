@@ -47,6 +47,12 @@ variable "enabled" {
   default     = true
 }
 
+variable "private_access_link" {
+  description = "(Optional) -  A Switch that decides whether to create a internal network lb to provide provider access for the apigw to VPC resources. Default is false"
+  type        = bool
+  default     = false
+}
+
 // Resource: aws_iam_role
 variable "description" {
   type        = string
@@ -62,7 +68,7 @@ variable "force_detach_policies" {
 
 variable "path" {
   type        = string
-  default     = ""
+  default     = null
   description = "(Optional) - The path to the role. See IAM Identifiers for more information."
 }
 

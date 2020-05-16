@@ -19,6 +19,7 @@ resource "aws_lb" "default" {
 }
 
 resource "aws_api_gateway_vpc_link" "default" {
+  count       = var.enabled == true && var.private_access_link == true ? 1 : 0
   name        = "${module.label.id}-vpc-link"
   description = var.description
   target_arns = ["${aws_lb.default.arn}"]
