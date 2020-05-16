@@ -50,8 +50,8 @@ variable "enabled" {
 // Resource: aws_iam_role
 variable "description" {
   type        = string
-  default     = "(Optional) - Managed by Terraform"
-  description = "The description of the role."
+  default     = "Managed by Terraform"
+  description = "(Optional) - The description of the role."
 }
 
 variable "force_detach_policies" {
