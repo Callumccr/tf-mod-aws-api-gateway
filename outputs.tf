@@ -13,5 +13,5 @@ output "cloudwatch_event_rule_arns" {
 }
 
 output "subnet_ids" {
-  value = var.subnet_is
+  value = var.subnet_ids
 }
