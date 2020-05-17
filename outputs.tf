@@ -11,3 +11,7 @@ output "cloudwatch_event_rule_arns" {
   value       = aws_cloudwatch_event_rule.default.*.arn
   description = "The Amazon Resource Name (ARN) of the rule."
 }
+
+output "subnet_ids" {
+  value = var.subnet_is
+}

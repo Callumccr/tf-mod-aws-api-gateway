@@ -2,21 +2,21 @@ resource "aws_api_gateway_account" "default" {
   cloudwatch_role_arn = aws_iam_role.cloudwatch.arn
 }
 
-resource "aws_lb" "default" {
-  name               = module.lb_label.id
-  internal           = true
-  load_balancer_type = "network"
-  tags               = module.lb_label.tags
+# resource "aws_lb" "default" {
+#   name               = module.lb_label.id
+#   internal           = true
+#   load_balancer_type = "network"
+#   tags               = module.lb_label.tags
 
 
-  dynamic "subnet_mapping" {
-    for_each = length(var.subnet_ids) > 0 ? [] : var.subnet_ids
-    iterator = subnet
-    content {
-      subnet_id = subnet.value
-    }
-  }
-}
+#   dynamic "subnet_mapping" {
+#     for_each = length(var.subnet_ids) > 0 ? [] : var.subnet_ids
+#     iterator = subnet
+#     content {
+#       subnet_id = subnet.value
+#     }
+#   }
+# }
 
 resource "aws_api_gateway_vpc_link" "default" {
   count       = var.enabled == true && var.private_access_link == true ? 1 : 0
