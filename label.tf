@@ -15,7 +15,7 @@ module "lb_label" {
   environment        = var.environment
   name               = var.name
   delimiter          = "-"
-  attributes         = concat([module.label.attributes], ["lb"])
+  attributes         = ["api", "lb"]
   additional_tag_map = {} /* Additional attributes (e.g. 1) */
   label_order        = ["environment", "namespace", "name", "attributes"]
 }

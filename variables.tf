@@ -47,11 +47,17 @@ variable "enabled" {
   default     = true
 }
 
+variable "private_access_link" {
+  description = "(Optional) -  A Switch that decides whether to create a internal network lb to provide provider access for the apigw to VPC resources. Default is false"
+  type        = bool
+  default     = false
+}
+
 // Resource: aws_iam_role
 variable "description" {
   type        = string
-  default     = "(Optional) - Managed by Terraform"
-  description = "The description of the role."
+  default     = "Managed by Terraform"
+  description = "(Optional) - The description of the role."
 }
 
 variable "force_detach_policies" {
@@ -62,13 +68,13 @@ variable "force_detach_policies" {
 
 variable "path" {
   type        = string
-  default     = ""
+  default     = null
   description = "(Optional) - The path to the role. See IAM Identifiers for more information."
 }
 
 variable "max_session_duration" {
-  type        = string
-  default     = ""
+  type        = number
+  default     = null
   description = "(Optional) - The maximum session duration (in seconds) that you want to set for the specified role. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 1 hour to 12 hours."
 }
 
